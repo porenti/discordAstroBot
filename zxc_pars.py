@@ -2,7 +2,6 @@ import requests
 from bs4 import BeautifulSoup
 from config import zz,zz_n
 
-#код уродливый, да
 
 class zxc_pars():
     def zxc(self):
