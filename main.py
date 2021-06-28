@@ -16,7 +16,7 @@ class MyClient(discord.Client):
 
     async def on_message(self, message):
         if message.content.title() in _list_calls:
-            _str = x.zxc().split('\n')
+            _str = x.zxc().split('(x)')
             print(_str)
             for item in _str:
                 await message.channel.send(item)
