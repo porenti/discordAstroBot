@@ -12,6 +12,7 @@ class zxc_pars():
         z = soup.findAll("div", {"class": "pi_text"})[1].get_text()[1:]
         for i in range(len(zz)):
             z = z.replace(zz[i],zz_n[i])
+        z = z.replace('Показать полностью...','')
         return z
 
 #x = zxc_pars()
