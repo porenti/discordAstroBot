@@ -25,7 +25,7 @@ class MyClient(discord.Client):
             await message.channel.send(_night_list_a[random(0,len(_night_list_a)-1)])
         elif message.content.title() in _rnm:
             await message.channel.send(y.anec())
-        if random(0,100) <= 30:         #То что человек выполняет функцию не означает, что его не надо обозвать
+        if random(0,100) <= 50 or message.author.id == 211550782468784128:         #То что человек выполняет функцию не означает, что его не надо обозвать
             if message.author.id in _hate_list:
                 await message.channel.send(_hate_list_a[random(0,len(_hate_list_a)-1)])
         print(message.author.id, message.content)

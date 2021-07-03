@@ -11,7 +11,7 @@ class anec_pars():
         r = requests.get(url)
         html = r.text
         #я обязательно научусь в регулярки, а пока
-        anek = html.replace('"','').replace('}','').replace('{','').replace(':','').replace('content','')
+        anek = html.replace('"','').replace('}','',1).replace('{','',1).replace(':','',1).replace('content','',1)
         return anek
 
 #a = anec_pars()
