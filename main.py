@@ -25,6 +25,24 @@ class MyClient(discord.Client):
             await message.channel.send(_night_list_a[random(0,len(_night_list_a)-1)])
         elif message.content.title() in _rnm:
             await message.channel.send(y.anec())
+        elif message.content.title()[0] == 'R':   #я понимаю что тут не надо создавать методы, но это временное решение, до переноса все в 1 класс
+            try:
+                _randomQst = message.content.title().split(' ')
+                _randomFst = int(_randomQst[1])
+                _randomScd = int(_randomQst[2]) #сделать 3й необязательный элемент который делает несколько итераций
+                _randomAns = random(_randomFst,_randomScd)
+            except:
+                _randomAns = 'Пример запроса "r 0 100"'
+            await message.channel.send(_randomAns)
+        elif message.content.title()[0:4] == 'Flip': #это тоже перенести надо
+            _Flip = random(0,1)
+            if _Flip == 0:
+                _FlipAnswer = 'ОРЁЛ'
+            else:
+                _FlipAnswer = 'РЕШКА'
+            await message.channel.send(_FlipAnswer)
+
+
         if random(0,100) <= 50 or message.author.id == 211550782468784128:         #То что человек выполняет функцию не означает, что его не надо обозвать
             if message.author.id in _hate_list:
                 await message.channel.send(_hate_list_a[random(0,len(_hate_list_a)-1)])
