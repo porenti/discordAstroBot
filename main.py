@@ -4,10 +4,10 @@ from random import randint as random
 
 from zxc_pars import zxc_pars
 from anecdota import anec_pars
-
+from services import funcionality
 
 from KEYS import ds_token,_hate_list_a
-from config import _night_list,_night_list_a,_hate_list,_list_calls,_rnm,_rnm_a
+from config import _help_text,_night_list,_night_list_a,_hate_list,_list_calls,_rnm,_rnm_a
 
 
 class MyClient(discord.Client):
@@ -44,6 +44,11 @@ class MyClient(discord.Client):
             await message.channel.send(_FlipAnswer)
         elif message.content.title() == "End":
             await client.logout()
+        elif message.content.title() == "Help":
+            await message.channel.send(_help_text)
+        elif message.content.title()[0:3] == "Eng":
+            await message.channel.send(z.engspeach(message.content[4:]))
+
 
 
         if random(0,100) <= 50 or message.author.id == 211550782468784128:         #То что человек выполняет функцию не означает, что его не надо обозвать
@@ -54,6 +59,7 @@ class MyClient(discord.Client):
 
 x = zxc_pars()
 y = anec_pars()
+z = funcionality()
 
 client = MyClient()
 client.run(ds_token)
